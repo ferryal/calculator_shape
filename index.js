@@ -1,51 +1,79 @@
-let buttonAdd = document.querySelector("#btn-tambah");
-let buttonSub = document.querySelector("#button-subs");
-let buttonMulti = document.querySelector("#button-multi");
-let buttonDiv = document.querySelector("#button-div");
-let buttonMod = document.querySelector('#button-mod');
-let buttonAddSub = document.querySelector('#button-addsubs');
+// NOTE: initiate all button
+let buttonSA = document.querySelector("#btn-sa");
+let buttonSP = document.querySelector("#btn-sp");
+let buttonCA = document.querySelector("#btn-ca");
+let buttonCC = document.querySelector("#btn-cc");
+let buttonCA = document.querySelector('#btn-ca');
+let buttonCV = document.querySelector('#btn-cv');
+let buttonTV = document.querySelector("#btn-tv");
+let buttonTA = document.querySelector('#btn-ta');
 
-//NOTE: addition
-function addition() {
-  var numbA = parseFloat(document.getElementById('input-one').value);
-  var numbB = parseFloat(document.getElementById('input-two').value);
+//NOTE: calculateSquareArea
+function calculateSquareArea() {
+  var sisi = parseFloat(document.getElementById('input-one').value);
 
-  document.getElementById('result').innerHTML = numbA + numbB;
+  document.getElementById('result').innerHTML = sisi * sisi;
 }
-// NOTE: substract
-function min() {
-  var numbA = parseFloat(document.getElementById('input-one').value);
-  var numbB = parseFloat(document.getElementById('input-two').value);
 
-  document.getElementById('result').innerHTML = numbA - numbB;
+// NOTE: calculateSquarePerimeter
+function calculateSquarePerimeter() {
+  var sisi = parseFloat(document.getElementById('input-one').value);
 
+  document.getElementById('result').innerHTML = sisi * 4;
   // return numbA - numbB;
 }
 
-// NOTE: multiplication
-function multiplication() {
-  var numbA = parseFloat(document.getElementById('input-one').value);
-  var numbB = parseFloat(document.getElementById('input-two').value);
+// NOTE: calculateCircleArea
+function calculateCircleArea() {
+  var r = parseFloat(document.getElementById('input-one').value);
 
-  document.getElementById('result').innerHTML = numbA * numbB;
-}
-// NOTE: division
-function division() {
-  var numbA = parseFloat(document.getElementById('input-one').value);
-  var numbB = parseFloat(document.getElementById('input-two').value);
-
-  document.getElementById('result').innerHTML = numbA / numbB;
-}
-// NOTE: modulus
-function mod() {
-  var numbA = parseFloat(document.getElementById('input-one').value);
-  var numbB = parseFloat(document.getElementById('input-two').value);
-
-  document.getElementById('result').innerHTML = numbA % numbB;
+  document.getElementById('result').innerHTML = (r * r) * Math.PI;
 }
 
-buttonAdd.addEventListener('click', addition);
-buttonSub.addEventListener('click', min);
-buttonMulti.addEventListener('click', multiplication);
-buttonDiv.addEventListener('click', division);
-buttonMod.addEventListener('click', mod);
+// NOTE: calculateCircleCircumference
+function calculateCircleCircumference() {
+  var radius = parseFloat(document.getElementById('input-one').value);
+
+  document.getElementById('result').innerHTML = radius * Math.PI * 2;
+}
+
+// NOTE: calculateCubeArea
+function calculateCubeArea() {
+  var a = parseFloat(document.getElementById('input-one').value);
+
+  document.getElementById('result').innerHTML = 6 * (a * a);
+}
+
+// NOTE: calculateCubeVolume
+function calculateCubeVolume() {
+  var a = parseFloat(document.getElementById('input-one').value);
+
+  document.getElementById('result').innerHTML = a * a * a;
+}
+
+// NOTE: calculateTubeVolume
+function calculateTubeVolume() {
+  var r = parseFloat(document.getElementById('input-one').value);
+  var t = parseFloat(document.getElementById('input-two').value);
+
+
+  document.getElementById('result').innerHTML = Math.PI * (r * r) * t;
+}
+
+// NOTE: calculateTubeArea
+function calculateTubeArea() {
+  var r = parseFloat(document.getElementById('input-one').value);
+  var t = parseFloat(document.getElementById('input-two').value);
+
+
+  document.getElementById('result').innerHTML = Math.PI * 2 * r * t;
+}
+
+buttonSA.addEventListener('click', calculateSquareArea);
+buttonSP.addEventListener('click', calculateSquarePerimeter);
+buttonCA.addEventListener('click', calculateCircleArea);
+buttonCC.addEventListener('click', calculateCircleCircumference);
+buttonCA.addEventListener('click', calculateCubeArea);
+buttonCV.addEventListener('click', calculateCubeVolume);
+buttonTV.addEventListener('click', calculateTubeVolume);
+buttonTA.addEventListener('click', calculateTubeArea);
