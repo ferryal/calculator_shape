@@ -1,9 +1,9 @@
 // NOTE: initiate all button
-let buttonSA = document.querySelector("#btn-sa");
+let buttonSQA = document.querySelector("#btn-sqa");
 let buttonSP = document.querySelector("#btn-sp");
 let buttonCA = document.querySelector("#btn-ca");
 let buttonCC = document.querySelector("#btn-cc");
-let buttonCA = document.querySelector('#btn-ca');
+let buttonCUA = document.querySelector('#btn-cua');
 let buttonCV = document.querySelector('#btn-cv');
 let buttonTV = document.querySelector("#btn-tv");
 let buttonTA = document.querySelector('#btn-ta');
@@ -27,7 +27,7 @@ function calculateSquarePerimeter() {
 function calculateCircleArea() {
   var r = parseFloat(document.getElementById('input-one').value);
 
-  document.getElementById('result').innerHTML = (r * r) * Math.PI;
+  document.getElementById('result').innerHTML = r * r * Math.PI;
 }
 
 // NOTE: calculateCircleCircumference
@@ -53,27 +53,47 @@ function calculateCubeVolume() {
 
 // NOTE: calculateTubeVolume
 function calculateTubeVolume() {
-  var r = parseFloat(document.getElementById('input-one').value);
-  var t = parseFloat(document.getElementById('input-two').value);
 
-
-  document.getElementById('result').innerHTML = Math.PI * (r * r) * t;
+  // var x = null;
+  console.log(t, r);
+  try {
+    var r = parseFloat(document.getElementById('input-one').value);
+    var t = parseFloat(document.getElementById('input-two').value);
+    console.log("r:", r);
+    if (isNaN(r) || isNaN(t)) {
+      throw Error("r or t is NaN");
+    }
+    console.log(t, r);
+    document.getElementById('result').innerHTML = Math.PI * (r * r) * t;
+  } catch (e) {
+    var error = document.getElementById('result');
+    error.innerHTML = "warning " + e;
+  }
 }
+
 
 // NOTE: calculateTubeArea
 function calculateTubeArea() {
-  var r = parseFloat(document.getElementById('input-one').value);
-  var t = parseFloat(document.getElementById('input-two').value);
-
-
-  document.getElementById('result').innerHTML = Math.PI * 2 * r * t;
+  try {
+    var r = parseFloat(document.getElementById('input-one').value);
+    var t = parseFloat(document.getElementById('input-two').value);
+    console.log("r:", r);
+    if (isNaN(r) || isNaN(t)) {
+      throw Error("r or t is NaN");
+    }
+    console.log(t, r);
+    document.getElementById('result').innerHTML = Math.PI * 2 * r * t;
+  } catch (e) {
+    var error = document.getElementById('result');
+    error.innerHTML = "warning " + e;
+  }
 }
 
-buttonSA.addEventListener('click', calculateSquareArea);
+buttonSQA.addEventListener('click', calculateSquareArea);
 buttonSP.addEventListener('click', calculateSquarePerimeter);
 buttonCA.addEventListener('click', calculateCircleArea);
 buttonCC.addEventListener('click', calculateCircleCircumference);
-buttonCA.addEventListener('click', calculateCubeArea);
+buttonCUA.addEventListener('click', calculateCubeArea);
 buttonCV.addEventListener('click', calculateCubeVolume);
 buttonTV.addEventListener('click', calculateTubeVolume);
 buttonTA.addEventListener('click', calculateTubeArea);
