@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- NOTE: materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- NOTE: google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Quicksand:300,400,700|Bellefair" rel="stylesheet">
+    <title>Calculator Math</title>
+    <link rel="stylesheet" href="./index.css">
+
+  </head>
+
+  <body>
+    <div class="row">
+      <h2> Calculator Math </h2>
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <label for="input-one"></label>
+            <input id="input-one" type="number" placeholder="number 1">
+            <label for="input-two"></label>
+            <input id="input-two" type="number" name="" value="" placeholder="number 2">
+            <br>
+            <br>
+            <button id="btn-tambah" class="btn btn-outline-dark btn-sm" type="button" name="button"> + </button>
+            <button id="button-subs" class="btn btn-outline-dark btn-sm" type="button" name="button"> - </button>
+            <button id="button-multi" class="btn btn-outline-dark btn-sm" type="button" name="button"> * </button>
+            <br>
+            <br>
+            <button id="button-div" class="btn btn-outline-dark btn-sm" type="button" name="button"> / </button>
+            <button id="button-mod" class="btn btn-outline-dark btn-sm" type="button" name="button"> % </button>
+            <button id="button-addsubs" class="btn btn-outline-dark btn-sm" type="button" name="button"> add & substract</button>
+          </div>
+        </div>
+
+    </div>
+    </form>
+    <div>
+      <label class="output" for="">Output :</label>
+      <p id="result"></p>
+    </div>
+
+
+    <script type="text/javascript" src="./index.js">
+    </script>
+
+  </body>
+
+</html>
